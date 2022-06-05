@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { PlaceService } from 'src/app/services/place.service';
 import { Response } from 'src/app/models/response';
+
+
 
 
 let places : Response = {
@@ -10,12 +12,19 @@ let places : Response = {
 }
 
 
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+
+  lat : number = 0;
+  lng : number = 0;
+  zoom : number = 0 ;
+  // icanurl : string = "";3.06627299999999
+  iconn : string = "assets/images/map-loc.png ";
 
   places : Response = places;
 
@@ -25,9 +34,9 @@ export class MapComponent implements OnInit {
 
   this.placeService.getplace("/get_places").subscribe((result) => {
     
-    let jsonstring = JSON.stringify(result);
+    // let jsonstring = JSON.stringify(result);
     // console.log(jsonstring);
-    this.places = JSON.parse(jsonstring);
+    this.places = JSON.parse(JSON.stringify(result));
     console.log(this.places);
 
   });

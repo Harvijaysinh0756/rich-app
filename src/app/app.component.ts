@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Response, ResponseSingle } from './models/response';
+import {  ResponseSingle } from './models/response';
 import { SiteSettingService } from './services/site-setting.service';
 // import { ApiService } from './services/api.service';
 

@@ -22,6 +22,7 @@ import { PlaceService } from './services/place.service';
 import { SiteSettingService } from './services/site-setting.service';
 import { PlaceDetailsComponent } from './component/place-details/place-details.component';
 import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,17 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     MapComponent,
     BlogComponent,
-    PlaceDetailsComponent
+    PlaceDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCBZ1E4AGu6xP_VV4GWr_qjnOte9sFmh0A'
+    })
   ],
   providers: [HttpService,BlogService,PlaceService,SiteSettingService],
   bootstrap: [AppComponent]
