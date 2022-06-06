@@ -20,9 +20,9 @@ let places : Response = {
 })
 export class MapComponent implements OnInit {
 
-  lat : number = 0;
-  lng : number = 0;
-  zoom : number = 0 ;
+  lat : number = 18.0603947;
+  lng : number = -63.0511808;
+  // zoom : number = 12 ;
   // icanurl : string = "";3.06627299999999
   iconn : string = "assets/images/map-loc.png ";
 
@@ -38,6 +38,7 @@ export class MapComponent implements OnInit {
     // console.log(jsonstring);
     this.places = JSON.parse(JSON.stringify(result));
     console.log(this.places);
+    // if()
 
   });
 

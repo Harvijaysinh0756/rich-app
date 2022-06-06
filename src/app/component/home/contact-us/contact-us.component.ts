@@ -47,8 +47,8 @@ export class ContactUsComponent implements OnInit {
         // console.log(result.message);
 
         resContact = JSON.parse(JSON.stringify(result));
-        // alert(resContact.message);
-        console.log(resContact.message);
+        alert(resContact.message);
+        // console.log(resContact.message);
       })
    
       // console.log(this.contact);

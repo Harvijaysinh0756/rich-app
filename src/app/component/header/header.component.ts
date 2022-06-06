@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { siteSetting } from 'src/app/models/siteSetting';
 import { Response, ResponseSingle } from 'src/app/models/response';
 
@@ -20,8 +20,17 @@ export class HeaderComponent implements OnInit {
 
   @Input() siteSetting : ResponseSingle = siteSetting;
 
-  constructor(private router: Router) { }
+  hash : string = "" ;
+
+  constructor(private router: ActivatedRoute ) { }
 
   ngOnInit(): void {
+
+    this.router.fragment.subscribe( (fragment) =>{
+
+    this.hash = (fragment) ? fragment : "";
+
+    });
+
   } 
 }
